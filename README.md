@@ -12,6 +12,7 @@ Create config.py file and import it with the following criteria:
 
 # Setup
 To create this, you must create a Reddit app inside your preferences on your Reddit account. https://www.reddit.com/prefs/apps/
+Name it whatever you want, just select the script type, your client secret and client id will display. The redirect URI does not matter, just enter a placeholder domain.
 
 # Documentation
 For more information, adhere to the PRAW documentation https://praw.readthedocs.io/en/latest/index.html
