@@ -1,2 +1,4 @@
 # Epic-Bot
-A reddit bot that replies "epic" to anyone who comments "fortnite".
+Written in Python 3.7, Epic Bot will reply "epic" to any comment found that has "fortnite" in the comment body.
+
+Replace placeholders with your own.
