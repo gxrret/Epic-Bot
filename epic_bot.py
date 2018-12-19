@@ -16,12 +16,14 @@ def bot_login():
 
 def run_bot(r, comments_replied_to):
     print("Searching last x comments")
-
+    #This function will search the x comments posted in what ever subreddits you choose.
     for comment in r.subreddit('SUBREDDIT_GOES_HERE').comments(limit=x): #You should change the limit to something low, Reddit will detect the rate limit.
+        # If the requested txt is found in a comment and if the comment is not by the logged in user, a reply will be posted.
         if "fortnite" in comment.body and comment.id not in comments_replied_to and comment.author != r.user.me():
             print("String with \"TEXT_YOU_WANT_TO_DETECT\" found in comment " + comment.id)
             comment.reply("REPLY")
-            print("Replied to comment " + comment.id)    
+            print("Replied to comment " + comment.id)
+        # Converting the comments txt file to a list so we can access the append function.
         comments_replied_to = list(comments_replied_to)
         comments_replied_to.append(comment.id)
 
