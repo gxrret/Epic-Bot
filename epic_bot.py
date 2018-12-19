@@ -5,27 +5,28 @@ import os
 
 def bot_login():
     print("Logging in...")
+    # Create a Reddit instance
     r = praw.Reddit(username = config.username,
                     password = config.password,
                     client_id = config.client_id,
                     client_secret = config.client_secret,
-                    user_agent = "Epic Bot 0.0.1 by /u/zypherxx")
+                    user_agent = "name of bot + version + by /u/USERNAME")
     print("Logged in!")
     return r
 
 def run_bot(r, comments_replied_to):
-    print("Searching last 100 comments")
+    print("Searching last x comments")
 
-    for comment in r.subreddit('gaming+fortnitebr+comedyheaven').comments(limit=100):
+    for comment in r.subreddit('SUBREDDIT_GOES_HERE').comments(limit=x): #You should change the limit to something low, Reddit will detect the rate limit.
         if "fortnite" in comment.body and comment.id not in comments_replied_to and comment.author != r.user.me():
-            print("String with \"fortnite\" found in comment " + comment.id)
-            comment.reply("epic")
+            print("String with \"TEXT_YOU_WANT_TO_DETECT\" found in comment " + comment.id)
+            comment.reply("REPLY")
             print("Replied to comment " + comment.id)    
         comments_replied_to = list(comments_replied_to)
         comments_replied_to.append(comment.id)
 
         with open ("comments_replied_to.txt", "a") as f:
-            f.write(comment.id + "\n")
+            f.write(comment.id + "\n") # This adds the scraped comment to the txt file
 
     print("Search completed")
 
