@@ -1,5 +1,5 @@
-# Epic-Bot
-Written in Python 3.7 and using PRAW, this reddit bot will reply to any comment found that has specific text in the comment body.
+# Reddit Comment Bot Framework
+Written in Python 3.7 and using PRAW, this reddit bot framework will get you started in creating a bot that can reply to any comment found that has specific text in the comment body.
 
 Replace placeholders with your own.
 
